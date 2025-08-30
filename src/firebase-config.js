@@ -2,16 +2,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Add your web app's Firebase configuration
-// Replace this with the firebaseConfig object you copied from the website
+// Your web app's Firebase configuration, now read from secure environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyBlCg0HNm-T1hbOnogdiN_K52-J7Z8fEoE",
-  authDomain: "telugu-quiz-app-5bad3.firebaseapp.com",
-  projectId: "telugu-quiz-app-5bad3",
-  storageBucket: "telugu-quiz-app-5bad3.firebasestorage.app",
-  messagingSenderId: "471065939987",
-  appId: "1:471065939987:web:4298ac8a8ff85a7916afe6",
-  measurementId: "G-TM4GQZFJJR"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
